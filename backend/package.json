@@ -6,9 +6,10 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon --exec ts-node src/index.ts",
-    "build": "pnpm install && tsc",
+    "build": "tsc",
     "clean": "rm -rf dist",
     "prebuild": "pnpm run clean",
+    "postinstall": "pnpm run build",
     "lint": "eslint . --ext .ts"
   },
   "dependencies": {
@@ -29,7 +30,7 @@
     "eslint": "^8.56.0",
     "nodemon": "^3.0.3",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.7.2"
   },
   "engines": {
     "node": ">=18.0.0",
